@@ -20,7 +20,15 @@
       <title>Byte-Me</title>
       <!--<link rel="stylesheet" type="text/css" href="pagestyling.css"> -->
 
-      <header><img src = "Sentiment_Analysis_Logo.jpg" border = "3" id = "logo" align="middle" class = "logo">
+      <header>
+        <div id="loginForm" class="loginting">
+        <form id="loginForm" action="/action_page.php">
+            <input id="userInput" type="text" placeholder="Username" name="username">
+            <input id="passInput" type="text" placeholder="Password" name="psw">
+            <button  class="login" type="button" onclick="LogOn(getElementById('userInput').value, getElementById('passInput').value)">Admin User Log In</button>
+        </form>
+    </div>
+        <img src = "Sentiment_Analysis_Logo.jpg" border = "3" id = "logo" align="middle" class = "logo">
 
       <style>
         .logo { height: 180px; display: block;margin-right: auto; margin-left: auto;
@@ -29,6 +37,13 @@
         .resultWrapper{ 
 
         }
+
+        .button{
+          color: black;
+        }
+        .login{color: black;
+        }
+
 
         .topnav{ display: table; width: 100%; border-collapse: collapse;border:none; text-align: center;}
 
@@ -73,8 +88,8 @@
                     <div class="addBookDiv"> <!-- Div containing body of the search list -->
                         <form id="bookDetailForm"> <!-- Form with details of the book -->
                             
-                            <input id = "" type = "text" placeholder = "Submit employee review message" name ="" style="width: 300px;">
-                            <button id = "" onclick = "" type="button">Submit</button>
+                            <input id = "" class="button" type = "text" placeholder = "Submit employee review message" name ="" style="width: 300px;">
+                            <button class="button" onclick = "" type="button">Submit</button>
                         </form> <!-- End book details Form -->
                     </div> <!-- End bookDetailsDiv Div -->
                    
