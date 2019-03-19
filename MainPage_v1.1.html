@@ -1,57 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head> <!-- Head section -->
-      <meta charset="utf-8">
+<title>Byte-Me</title>
+<link rel="stylesheet" type="text/css" href="pagestyling.css">
+<script src="js/addBook.js"></script>
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"  type="text/javascript"></script>
 
-      <!-- If IE use the latest rendering engine -->
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      
-      <!-- Set the page to the width of the device and set the zoon level -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- Latest compiled and minified CSS -->
-      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+ <header>
+  <div id="loginForm" class="loginting">
+        <form id="loginForm" action="/action_page.php">
+            <input id="userInput" type="text" placeholder="Username" name="username">
+            <input id="passInput" type="text" placeholder="Password" name="psw">
+            <button  id="loginButton" type="button" onclick="LogOn(getElementById('userInput').value, getElementById('passInput').value)">Admin User Log In</button>
+        </form>
+        <a href="Signup.html">No account? Sign up!</a>
+    </div>
 
-      <!-- jQuery library -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <img src = "pic/logo3.gif" border = 3 id = "logo" align="middle"
+  class = "logo">
 
-      <!-- Latest compiled JavaScript -->
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-      <title>Byte-Me</title>
-      <!--<link rel="stylesheet" type="text/css" href="pagestyling.css"> -->
-
-      <header><img src = "Sentiment_Analysis_Logo.jpg" border = "3" id = "logo" align="middle" class = "logo">
-
-      <style>
-        .logo { height: 180px; display: block;margin-right: auto; margin-left: auto;
-        }
-
-        .resultWrapper{ 
-
-        }
-
-        .topnav{ display: table; width: 100%; border-collapse: collapse;border:none; text-align: center;}
-
-        .topnav ul{ display: table-row; }
-
-        .topnav li{ display: table-cell;margin: 0; font-size: 2.0rem; text-transform: uppercase; letter-spacing: 5px; font-family: sans-serif;}
-
-        .topnav a{ text-decoration: none; color: black}
-
-        .column{ float:left;width:33.33%; text-align: center;border-radius:25px; height: 400px}
-
-         header{ background-color: #e3e6ef;}
-
-        .foot{ position: absolute;}
-
-        footer{ text-align: center; font-family: sans-serif;}
-
-        body{ background-color: #1c3372; color: #ebeef4;}
-
-        div{ color: #ebeef4; margin-right: auto; margin-left: auto; }
-      </style>
-
-    </head>
+</head>
 <body><font color = "black">
 
   <br><hr>
@@ -63,6 +31,7 @@
 </div>
 </header>
 <hr>
+    </head>
      <!-- Body Section -->
         <div id="resultWrapper"> <!-- Wrapper around all the contents of the body -->
             <div id="resultDiv"> <!-- Div containing all the actual book detail contents -->
