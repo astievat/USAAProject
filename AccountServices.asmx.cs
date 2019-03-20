@@ -34,7 +34,7 @@ namespace accountmanager
 			string sqlConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["myDB"].ConnectionString;
 			//here's our query.  A basic select with nothing fancy.  Note the parameters that begin with @
 			//NOTICE: we added admin to what we pull, so that we can store it along with the id in the session
-			string sqlSelect = "SELECT id, admin FROM account WHERE userid=@idValue and pass=@passValue";
+			string sqlSelect = "SELECT userId, admin FROM accounts WHERE userId=@idValue and pass=@passValue";
 
 			//set up our connection object to be ready to use our connection string
 			MySqlConnection sqlConnection = new MySqlConnection(sqlConnectString);
@@ -61,7 +61,7 @@ namespace accountmanager
 				//if we found an account, store the id and admin status in the session
 				//so we can check those values later on other method calls to see if they 
 				//are 1) logged in at all, and 2) and admin or not
-				Session["id"] = sqlDt.Rows[0]["id"];
+				Session["userId"] = sqlDt.Rows[0]["userId"];
 				Session["admin"] = sqlDt.Rows[0]["admin"];
 				success = true;
 			}
@@ -286,8 +286,8 @@ namespace accountmanager
 			string sqlConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["myDB"].ConnectionString;
 			//the only thing fancy about this query is SELECT LAST_INSERT_ID() at the end.  All that
 			//does is tell mySql server to return the primary key of the last inserted row.
-			string sqlSelect = "insert into review1 (review) " +
-				"values(@id, @review); SELECT LAST_INSERT_ID();";
+			string sqlSelect = "insert into reviews1 (review) " +
+				"values(@reviewValue); SELECT LAST_INSERT_ID();";
 
 			MySqlConnection sqlConnection = new MySqlConnection(sqlConnectString);
 			MySqlCommand sqlCommand = new MySqlCommand(sqlSelect, sqlConnection);

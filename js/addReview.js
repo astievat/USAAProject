@@ -3,6 +3,7 @@ var userId;
 
 
 function CreateReview(review) {
+	alert(review)
 	var webMethod = "AccountServices.asmx/AddReview";
 	var parameters = "{\"review\":\"" + encodeURI(review) + "\"}";
 	// alert("creatingbook")
@@ -15,8 +16,7 @@ function CreateReview(review) {
 		dataType: "json",
 		success: function (msg) {
 			alert("Review Added");
-			window.location.href = "LendPage.html#name=" + name;
-
+			
 		},
 		error: function (e) {
 			alert("boo...");

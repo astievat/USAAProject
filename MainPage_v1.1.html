@@ -16,6 +16,10 @@
 
       <!-- Latest compiled JavaScript -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
+      <script type="text/javascript" src="js/logOn.js"></script>
+
+      <script type="text/javascript" src="js/addReview.js"></script>
 
       <title>Byte-Me</title>
       <!--<link rel="stylesheet" type="text/css" href="pagestyling.css"> -->
@@ -88,8 +92,8 @@
                     <div class="addBookDiv"> <!-- Div containing body of the search list -->
                         <form id="bookDetailForm"> <!-- Form with details of the book -->
                             
-                            <input id = "" class="button" type = "text" placeholder = "Submit employee review message" name ="" style="width: 300px;">
-                            <button class="button" onclick = "" type="button">Submit</button>
+                            <input id = "reviewInput" class="button" type = "text" placeholder = "Submit employee review message" name ="" style="width: 300px;">
+                            <button id="submitReviewId" class="button" onclick = "CreateReview(document.getElementById('reviewInput').value)" type="button">Submit</button>
                         </form> <!-- End book details Form -->
                     </div> <!-- End bookDetailsDiv Div -->
                    
