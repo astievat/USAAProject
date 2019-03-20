@@ -9,7 +9,7 @@ import MySQLdb
 import mysql.connector
 
 
-'connection string and cursor
+#connection string and cursor
 
 conn=mysql.connector.connect(host='byte.cis440.com',user='salem',passwd='CIS440!',db='byte_database') 
 mycursor=conn.cursor()
@@ -17,17 +17,28 @@ mycursor=conn.cursor()
 
 
 
-'pull from reviews1
+#pull from reviews1
 
 SQLCommand=("Select * from reviews1")
 mycursor = conn.cursor()
 mycursor.execute(SQLCommand)
 records = mycursor.fetchall()
 print("Rows:",mycursor.rowcount)
+i=0
 for row in records:
-    print("id = ", row[0], )
-    print("reviews = ", row[1] )
-    print("qType = ", row[2],"\n")
+    idVar = row[0]
+    reviewVar = row[1]
+    qTypeVar = row[2]
+        
+    
+    #analysis
+    
+    #insert into reviews 2
+
+    SQLCommand = ("INSERT INTO reviews2(review, sentimentScore, actionableScore, rudeScore, sentimentCount, actionableCount, rudeCount, qType) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)")
+    Values = [reviewVar,2.5,2.5,2.5,5,7,6,qTypeVar]
+    mycursor.execute(SQLCommand,Values)
+    conn.commit()
 
 
 
@@ -36,19 +47,14 @@ for row in records:
 
 
 
-'insert into reviews 2
-
-SQLCommand = ("INSERT INTO reviews2(review, sentimentScore, actionableScore, rudeScore, sentimentCount, actionableCount, rudeCount, qType) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)")
-Values = ["review",2.5,2.5,2.5,5,7,6,"type"]
-mycursor.execute(SQLCommand,Values)
-conn.commit()
 
 
 
 
 
 
-'Delete * from reviews 1
+
+#Delete * from reviews 1
 
 SQLCommand = ("Delete * from reviews1")
 mycursor.execute(SQLCommand)
