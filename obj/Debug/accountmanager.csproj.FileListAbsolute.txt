@@ -1,0 +1,149 @@
+C:\Users\Freddy\Documents\ASU classes\CIS440\section1\accountmanager\accountmanager\obj\Debug\accountmanager.csprojResolveAssemblyReference.cache
+C:\Users\Freddy\Documents\ASU classes\CIS440\section1\accountmanager\accountmanager\obj\Debug\accountmanager.csproj.CoreCompileInputs.cache
+C:\Users\lsai1\Desktop\accountmanager-20190212T224355Z-001\accountmanager\obj\Debug\accountmanager.csprojResolveAssemblyReference.cache
+C:\Users\lsai1\Desktop\accountmanager-20190212T224355Z-001\accountmanager\obj\Debug\accountmanager.csproj.CoreCompileInputs.cache
+C:\Users\Freddy\Desktop\accountmanager\obj\Debug\accountmanager.csproj.CoreCompileInputs.cache
+C:\Users\Freddy\Desktop\accountmanager\bin\accountmanager.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\accountmanager.pdb
+C:\Users\Freddy\Desktop\accountmanager\bin\Google.Protobuf.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.SqlServer.ConnectionDlg.Core.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.SqlServer.ConnectionDlg.UI.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.SqlServer.ConnectionDlg.VS.Azure.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.SqlServer.ConnectionDlg.VS.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\MySql.Data.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.SqlServer.Tools.Extensibility.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.SqlServer.Data.Tools.ExceptionMessageBox.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.VisualStudio.Shell.15.0.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.Data.Tools.Components.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.Azure.Common.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.Azure.ResourceManager.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.Azure.Management.Sql.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Hyak.Common.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.Azure.Common.NetFramework.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.VisualStudio.VSHelp.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.VisualStudio.Shell.Framework.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\System.Threading.Tasks.Dataflow.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.VisualStudio.ComponentModelHost.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.VisualStudio.Shell.Interop.9.0.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\EnvDTE.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.VisualStudio.ProjectAggregator.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.VisualStudio.GraphModel.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\stdole.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.MSXML.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Google.Protobuf.xml
+C:\Users\Freddy\Desktop\accountmanager\bin\MySql.Data.xml
+C:\Users\Freddy\Desktop\accountmanager\obj\Debug\accountmanager.dll
+C:\Users\Freddy\Desktop\accountmanager\obj\Debug\accountmanager.pdb
+C:\Users\Freddy\Desktop\accountmanager\bin\accountmanager.dll.config
+C:\Users\Freddy\Desktop\accountmanager\bin\Newtonsoft.Json.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.VisualStudio.Telemetry.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.VisualStudio.RemoteControl.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.VisualStudio.Utilities.Internal.dll
+C:\Users\Freddy\Desktop\accountmanager\bin\Microsoft.Diagnostics.Tracing.EventSource.dll
+C:\Users\Freddy\Desktop\accountmanager\obj\Debug\accountmanager.csproj.CopyComplete
+C:\Users\Freddy\Desktop\accountmanager\bin\Newtonsoft.Json.pdb
+C:\Users\Freddy\Desktop\accountmanager\bin\Newtonsoft.Json.xml
+C:\Users\Freddy\Desktop\accountmanager\obj\Debug\accountmanager.csprojAssemblyReference.cache
+C:\Users\Freddy\Desktop\VSVersion\accountmanager\obj\Debug\accountmanager.csprojAssemblyReference.cache
+C:\Users\Freddy\Desktop\VSVersion\accountmanager\obj\Debug\accountmanager.csproj.CoreCompileInputs.cache
+C:\Users\Freddy\Desktop\VSVersion\accountmanager\obj\Debug\accountmanager.dll
+C:\Users\Freddy\Desktop\VSVersion\accountmanager\obj\Debug\accountmanager.pdb
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\accountmanager.dll.config
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\accountmanager.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\accountmanager.pdb
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Google.Protobuf.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.SqlServer.ConnectionDlg.Core.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.SqlServer.ConnectionDlg.UI.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.SqlServer.ConnectionDlg.VS.Azure.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.SqlServer.ConnectionDlg.VS.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\MySql.Data.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Newtonsoft.Json.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.SqlServer.Tools.Extensibility.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.SqlServer.Data.Tools.ExceptionMessageBox.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.VisualStudio.Shell.15.0.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.Data.Tools.Components.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.Azure.Common.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.Azure.ResourceManager.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.Azure.Management.Sql.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Hyak.Common.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.Azure.Common.NetFramework.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.VisualStudio.VSHelp.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.VisualStudio.Shell.Framework.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.VisualStudio.Telemetry.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\System.Threading.Tasks.Dataflow.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.VisualStudio.ComponentModelHost.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.VisualStudio.Shell.Interop.9.0.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\EnvDTE.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.VisualStudio.ProjectAggregator.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.VisualStudio.GraphModel.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.VisualStudio.RemoteControl.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.VisualStudio.Utilities.Internal.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.Diagnostics.Tracing.EventSource.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\stdole.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Microsoft.MSXML.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Google.Protobuf.xml
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\MySql.Data.xml
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Newtonsoft.Json.pdb
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\bin\Newtonsoft.Json.xml
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\obj\Debug\accountmanager.csprojAssemblyReference.cache
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\obj\Debug\accountmanager.csproj.CoreCompileInputs.cache
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\obj\Debug\accountmanager.csproj.CopyComplete
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\obj\Debug\accountmanager.dll
+C:\Users\Freddy\Documents\ASU classes\CIS440\ByteMe\obj\Debug\accountmanager.pdb
+C:\Users\Freddy\Desktop\ByteMe\bin\accountmanager.dll.config
+C:\Users\Freddy\Desktop\ByteMe\bin\accountmanager.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\accountmanager.pdb
+C:\Users\Freddy\Desktop\ByteMe\bin\Google.Protobuf.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.SqlServer.ConnectionDlg.Core.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.SqlServer.ConnectionDlg.UI.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.SqlServer.ConnectionDlg.VS.Azure.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.SqlServer.ConnectionDlg.VS.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\MySql.Data.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Newtonsoft.Json.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.SqlServer.Tools.Extensibility.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.SqlServer.Data.Tools.ExceptionMessageBox.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.VisualStudio.Shell.15.0.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.Data.Tools.Components.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.Azure.Common.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.Azure.ResourceManager.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.Azure.Management.Sql.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Hyak.Common.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.Azure.Common.NetFramework.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.VisualStudio.VSHelp.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.VisualStudio.Shell.Framework.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.VisualStudio.Telemetry.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\System.Threading.Tasks.Dataflow.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.VisualStudio.ComponentModelHost.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.VisualStudio.Shell.Interop.9.0.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\EnvDTE.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.VisualStudio.ProjectAggregator.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.VisualStudio.GraphModel.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.VisualStudio.RemoteControl.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.VisualStudio.Utilities.Internal.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.Diagnostics.Tracing.EventSource.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\stdole.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Microsoft.MSXML.dll
+C:\Users\Freddy\Desktop\ByteMe\bin\Google.Protobuf.xml
+C:\Users\Freddy\Desktop\ByteMe\bin\MySql.Data.xml
+C:\Users\Freddy\Desktop\ByteMe\bin\Newtonsoft.Json.pdb
+C:\Users\Freddy\Desktop\ByteMe\bin\Newtonsoft.Json.xml
+C:\Users\Freddy\Desktop\ByteMe\obj\Debug\accountmanager.csprojAssemblyReference.cache
+C:\Users\Freddy\Desktop\ByteMe\obj\Debug\accountmanager.csproj.CoreCompileInputs.cache
+C:\Users\Freddy\Desktop\ByteMe\obj\Debug\accountmanager.csproj.CopyComplete
+C:\Users\Freddy\Desktop\ByteMe\obj\Debug\accountmanager.dll
+C:\Users\Freddy\Desktop\ByteMe\obj\Debug\accountmanager.pdb
