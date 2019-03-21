@@ -100,6 +100,7 @@
     <Content Include="Home.html" />
     <Content Include="js\index.js" />
     <Content Include="js\mysql.js" />
+    <Content Include="MainPage_v1.1.html" />
     <Content Include="pagestyling.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -112,9 +113,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="BookServices.asmx.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
