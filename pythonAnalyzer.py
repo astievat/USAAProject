@@ -8,6 +8,13 @@ import nltk
 import yaml
 import MySQLdb 
 import mysql.connector
+global positiveCount
+positiveCount = 0
+global negativeCount
+negativeCount = 0
+global actionableCount
+actionableCount = 0
+
 
 class Splitter(object):
     def __init__(self):
@@ -44,6 +51,9 @@ class POSTagger(object):
 
 
 class DictionaryTagger(object):
+
+    
+    
     def __init__(self, dictionary_paths):
         files = [open(path, 'r', encoding='utf-8', errors='ignore') for path in dictionary_paths]
         dictionaries = [yaml.load(dict_file) for dict_file in files]
@@ -103,14 +113,19 @@ class DictionaryTagger(object):
                 i += 1
         return tag_sentence    
     
-    
 def value_of(sentiment):
 
-    if sentiment == 'positive': return 1
+    if sentiment == 'positive': 
+        global positiveCount
+        positiveCount= positiveCount + 1
+        return 1
 
-    if sentiment == 'negative': return -1
-
+    if sentiment == 'negative':
+        global negativeCount
+        negativeCount = negativeCount + 1
+        return -1
     return 0
+
 
 def value_of_action(action):
     if action == 'action': return 1
@@ -162,6 +177,9 @@ records = mycursor.fetchall()
 print("Rows:",mycursor.rowcount)
 i=0
 for row in records:
+    positiveCount = 0
+    negativeCount = 0
+    actionableCount = 0
     idVar = row[0]
     reviewVar = row[1]
     qTypeVar = row[2]
@@ -189,9 +207,15 @@ for row in records:
     #insert into reviews 2
 
     SQLCommand = ("INSERT INTO reviews2(review, sentimentScore, actionableScore, rudeScore, sentimentCount, actionableCount, rudeCount, qType) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)")
-    Values = [reviewVar,2.5,2.5,2.5,5,7,6,qTypeVar]
-    mycursor.execute(SQLCommand,Values)
-    conn.commit()
+    Values = [reviewVar,sentimentScore,actionableScore,2.5,5,7,6,qTypeVar]
+    #mycursor.execute(SQLCommand,Values)
+    #conn.commit()
+    
+    
+    
+    
+    
+
 
 
 
@@ -210,8 +234,8 @@ for row in records:
 #Delete * from reviews 1
 
 SQLCommand = ("Delete * from reviews1")
-mycursor.execute(SQLCommand)
-conn.commit()
+#mycursor.execute(SQLCommand)
+#conn.commit()
 mycursor.close()
 if(conn.is_connected()):
     conn.close()
