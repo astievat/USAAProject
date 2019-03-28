@@ -8,6 +8,7 @@ import nltk
 import yaml
 import MySQLdb 
 import mysql.connector
+from textblob import TextBlob
 global positiveCount
 positiveCount = 0
 global negativeCount
@@ -200,8 +201,10 @@ for row in records:
     sentimentScore = sentiment_score(dict_tagged_sentences)
     print(action_score(dict_tagged_sentences))
     actionableScore = action_score(dict_tagged_sentences)
-    
-    
+
+    #based on existing algorism
+    opinion = TextBlob(reviewVar)
+    print(opinion.sentiment)
     
     
     #insert into reviews 2
