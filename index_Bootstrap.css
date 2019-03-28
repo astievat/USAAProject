@@ -9,6 +9,12 @@ body { background-color: #4F6D93;
       background-image: linear-gradient(to bottom, #FFFFFF, #4F6D93); 
 	  background-repeat: no-repeat;
 }
+
+/*#mainsec{ word-wrap: break-word; word-break: break-all; }
+#reviewInput{ height: 500px; width: 150px; border: 1px solid; word-wrap: break-word;
+display: block;margin-right: auto; margin-left: auto; }*/
+#messageBox { display: block;margin-right: auto; margin-left: auto; }
+
 #wrapper { width: 80%;
            margin-left: auto;
 		   margin-right: auto;
@@ -23,8 +29,8 @@ header { background-color: #000033;
 	   background-position: right;
 	   background-repeat: no-repeat;
 	   text-align: center;
-	   height: 60px;
-	   padding-top: 15px;
+	   height: 180px;
+	   
 }
 h1 { margin-bottom: 0;
     margin-top: 0;
@@ -34,7 +40,7 @@ h1 { margin-bottom: 0;
 nav { float: left;
      width: 160px;
      font-weight: bold; 
-	 padding: 20px;
+	 padding: 15px;
 }
 nav ul { list-style-type: none;
        margin: 0;
@@ -47,6 +53,9 @@ nav a { text-decoration: none;
 nav a:link { color: #000033; }
 nav a:visited { color: #000033; }
 nav a:hover { color: #FFFFFF; }
+
+.button{ color: black; margin: auto; display: block; }
+
 
 main { padding: 1px 20px 20px 30px; 
       display: block;
