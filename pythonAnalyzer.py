@@ -5,6 +5,8 @@ Created on Wed Mar 20 16:09:18 2019
 @author: Freddy
 """
 import nltk
+nltk.download('stopwords')
+from nltk.corpus import stopwords
 import yaml
 import MySQLdb 
 import mysql.connector
@@ -63,7 +65,7 @@ class DictionaryTagger(object):
         self.max_key_size = 0
         for curr_dict in dictionaries:
             for key in curr_dict:
-                print (key)
+                #print (key)
                 if key in self.dictionary:
                     self.dictionary[key].extend(curr_dict[key])
                 else:
@@ -129,7 +131,10 @@ def value_of(sentiment):
 
 
 def value_of_action(action):
-    if action == 'action': return 1
+    if action == 'action': 
+        global actionableCount
+        actionableCount = actionableCount + 1
+        return 1
     return 0
 #def sentiment_score(review):    
  #   return sum ([value_of(tag) for sentence in dict_tagged_sentences for token in sentence for tag in token[2]])
@@ -170,7 +175,7 @@ mycursor=conn.cursor()
 
 
 #pull from reviews1
-
+stoplist = stopwords.words('english')
 SQLCommand=("Select * from reviews1")
 mycursor = conn.cursor()
 mycursor.execute(SQLCommand)
@@ -186,6 +191,12 @@ for row in records:
     qTypeVar = row[2]
         
     
+    #get rid of stopwords
+    noStopwordsReviewVar = [word for word in reviewVar.split() if word not in stoplist]
+    print (noStopwordsReviewVar)
+    s = " ";
+    noStopwordsReviewVar = s.join(noStopwordsReviewVar)
+    print (noStopwordsReviewVar)
     #analysis
     text = reviewVar
     splitter = Splitter()
@@ -198,22 +209,45 @@ for row in records:
     dict_tagged_sentences = dicttagger.tag(pos_tagged_sentences)
     print(dict_tagged_sentences)
     print(sentiment_score(dict_tagged_sentences))
-    sentimentScore = sentiment_score(dict_tagged_sentences)
-    print(action_score(dict_tagged_sentences))
+    #sentimentScore = sentiment_score(dict_tagged_sentences)
+    #print(action_score(dict_tagged_sentences))
     actionableScore = action_score(dict_tagged_sentences)
 
     #based on existing algorism
     opinion = TextBlob(reviewVar)
     print(opinion.sentiment)
+    sentimentScore = opinion.sentiment.polarity
+    subjectivity = opinion.sentiment.subjectivity
     
+        #No Stopword Word Count
+    for char in '-.,\n':
+        Text=noStopwordsReviewVar.replace(char,' ')
+    Text = Text.lower()
+    word_list = Text.split()
+    
+    wordCount = (len(word_list))
+    
+    actionableScore = actionableScore/wordCount
+    
+    #round
+    sentimentScore = round(sentimentScore,2)
+    subjectivity = round(subjectivity,2)
+    actionableScore = round(actionableScore,2)
     
     #insert into reviews 2
-
-    SQLCommand = ("INSERT INTO reviews2(review, sentimentScore, actionableScore, rudeScore, sentimentCount, actionableCount, rudeCount, qType) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)")
-    Values = [reviewVar,sentimentScore,actionableScore,2.5,5,7,6,qTypeVar]
+    SQLCommand = ("INSERT INTO reviews2(review, sentimentScore, subjectivity, actionableScore, positiveCount, negativeCount, actionableCount, wordCount, qType) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)")
+    Values = [reviewVar,sentimentScore, subjectivity, actionableScore,positiveCount,negativeCount,actionableCount,wordCount, qTypeVar]
     #mycursor.execute(SQLCommand,Values)
     #conn.commit()
-    
+    print (reviewVar)
+    print (sentimentScore)
+    print (subjectivity)
+    print (actionableScore)
+    print (positiveCount)
+    print (negativeCount)
+    print (actionableCount)
+    print (wordCount)
+    print (qTypeVar)
     
     
     
