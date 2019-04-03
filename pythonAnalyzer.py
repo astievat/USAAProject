@@ -193,7 +193,7 @@ for row in records:
     
     #get rid of stopwords
     noStopwordsReviewVar = [word for word in reviewVar.split() if word not in stoplist]
-    print (noStopwordsReviewVar)
+    #print (noStopwordsReviewVar)
     s = " ";
     noStopwordsReviewVar = s.join(noStopwordsReviewVar)
     print (noStopwordsReviewVar)
@@ -202,15 +202,14 @@ for row in records:
     splitter = Splitter()
     postagger = POSTagger()
     splitted_sentences = splitter.split(text)
-    print (splitted_sentences)
+    #print (splitted_sentences)
     pos_tagged_sentences = postagger.pos_tag(splitted_sentences)
-    print (pos_tagged_sentences)
+    #print (pos_tagged_sentences)
     dicttagger = DictionaryTagger([ 'dicts/positive.yml', 'dicts/negative.yml', 'dicts/action.yml', 'dicts/inc.yml', 'dicts/dec.yml', 'dicts/inv.yml'])
     dict_tagged_sentences = dicttagger.tag(pos_tagged_sentences)
-    print(dict_tagged_sentences)
+    #print(dict_tagged_sentences)
     print(sentiment_score(dict_tagged_sentences))
-    #sentimentScore = sentiment_score(dict_tagged_sentences)
-    #print(action_score(dict_tagged_sentences))
+
     actionableScore = action_score(dict_tagged_sentences)
 
     #based on existing algorism
