@@ -96,9 +96,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AccountServices.asmx" />
+    <Content Include="dropdown.html" />
     <Content Include="Global.asax" />
     <Content Include="Home.html" />
-    <Content Include="js\index.js" />
+    <Content Include="js\addReview.js" />
+    <Content Include="js\getReviews.js" />
+    <Content Include="js\logOn.js" />
     <Content Include="js\mysql.js" />
     <Content Include="MainPage_v1.1.html" />
     <Content Include="pagestyling.css" />

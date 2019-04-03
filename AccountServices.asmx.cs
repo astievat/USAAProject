@@ -79,72 +79,50 @@ namespace accountmanager
 			return true;
 		}
 
-		
-
 		//EXAMPLE OF A SELECT, AND RETURNING "COMPLEX" DATA TYPES
 		[WebMethod(EnableSession = true)]
-		public Account[] GetAccounts()
+		public Review[] GetReviews()
 		{
 			//check out the return type.  It's an array of Account objects.  You can look at our custom Account class in this solution to see that it's 
 			//just a container for public class-level variables.  It's a simple container that asp.net will have no trouble converting into json.  When we return
 			//sets of information, it's a good idea to create a custom container class to represent instances (or rows) of that information, and then return an array of those objects.  
 			//Keeps everything simple.
 
-			//WE ONLY SHARE ACCOUNTS WITH LOGGED IN USERS!
-			if (Session["id"] != null)
+			
+			DataTable sqlDt = new DataTable("reviews");
+			string sqlConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["myDB"].ConnectionString;
+			string sqlSelect = "select id, review, sentimentScore, subjectivity, actionableScore, positiveCount, negativeCount, actionableCount, wordCount, qType from reviews2";
+			MySqlConnection sqlConnection = new MySqlConnection(sqlConnectString);
+			MySqlCommand sqlCommand = new MySqlCommand(sqlSelect, sqlConnection);
+			//gonna use this to fill a data table
+			MySqlDataAdapter sqlDa = new MySqlDataAdapter(sqlCommand);
+			//filling the data table
+			sqlDa.Fill(sqlDt);
+			//loop through each row in the dataset, creating instances
+			//of our container class Account.  Fill each acciount with
+			//data from the rows, then dump them in a list.
+			List<Review> reviews = new List<Review>();
+			for (int i = 0; i < sqlDt.Rows.Count; i++)
 			{
-				DataTable sqlDt = new DataTable("accounts");
-
-				string sqlConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["myDB"].ConnectionString;
-				string sqlSelect = "select id, userid, pass, firstname, lastname, email from account where active=1 order by lastname";
-
-				MySqlConnection sqlConnection = new MySqlConnection(sqlConnectString);
-				MySqlCommand sqlCommand = new MySqlCommand(sqlSelect, sqlConnection);
-
-				//gonna use this to fill a data table
-				MySqlDataAdapter sqlDa = new MySqlDataAdapter(sqlCommand);
-				//filling the data table
-				sqlDa.Fill(sqlDt);
-
-				//loop through each row in the dataset, creating instances
-				//of our container class Account.  Fill each acciount with
-				//data from the rows, then dump them in a list.
-				List<Account> accounts = new List<Account>();
-				for (int i = 0; i < sqlDt.Rows.Count; i++)
+				reviews.Add(new Review
 				{
-					//only share user id and pass info with admins!
-					if (Convert.ToInt32(Session["admin"]) == 1)
-					{
-						accounts.Add(new Account
-						{
-							id = Convert.ToInt32(sqlDt.Rows[i]["id"]),
-							userId = sqlDt.Rows[i]["userid"].ToString(),
-							password = sqlDt.Rows[i]["pass"].ToString(),
-							firstName = sqlDt.Rows[i]["firstname"].ToString(),
-							lastName = sqlDt.Rows[i]["lastname"].ToString(),
-							email = sqlDt.Rows[i]["email"].ToString()
-						});
-					}
-					else
-					{
-						accounts.Add(new Account
-						{
-							id = Convert.ToInt32(sqlDt.Rows[i]["id"]),
-							firstName = sqlDt.Rows[i]["firstname"].ToString(),
-							lastName = sqlDt.Rows[i]["lastname"].ToString(),
-							email = sqlDt.Rows[i]["email"].ToString()
-						});
-					}
-				}
-				//convert the list of accounts to an array and return!
-				return accounts.ToArray();
+					id = Convert.ToInt32(sqlDt.Rows[i]["id"]),
+					review = sqlDt.Rows[i]["review"].ToString(),
+					sentimentScore = sqlDt.Rows[i]["sentimentScore"].ToString(),
+					subjectivity = sqlDt.Rows[i]["subjectivity"].ToString(),
+					actionableScore = sqlDt.Rows[i]["actionableScore"].ToString(),
+					positiveCount = sqlDt.Rows[i]["positiveCount"].ToString(),
+					negativeCount = sqlDt.Rows[i]["negativeCount"].ToString(),
+					actionableCount = sqlDt.Rows[i]["actionableCount"].ToString(),
+					wordCount = sqlDt.Rows[i]["wordCount"].ToString(),
+					qType = sqlDt.Rows[i]["qType"].ToString()
+				});
 			}
-			else
-			{
-				//if they're not logged in, return an empty array
-				return new Account[0];
-			}
+			//convert the list of accounts to an array and return!
+			return reviews.ToArray();
 		}
+
+		
 
 		//EXAMPLE OF AN UPDATE QUERY WITH PARAMS PASSED IN
 		[WebMethod(EnableSession = true)]
@@ -190,42 +168,7 @@ namespace accountmanager
 
 
 
-		//EXAMPLE OF A SELECT, AND RETURNING "COMPLEX" DATA TYPES
-		[WebMethod(EnableSession = true)]
-		public Account[] GetAccountRequests()
-		{//LOGIC: get all account requests and return them!
-			if (Convert.ToInt32(Session["admin"]) == 1)
-			{
-				DataTable sqlDt = new DataTable("accountrequests");
-
-				string sqlConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["myDB"].ConnectionString;
-				//requests just have active set to 0
-				string sqlSelect = "select id, userid, pass, firstname, lastname, email from account where active=0 order by lastname";
-
-				MySqlConnection sqlConnection = new MySqlConnection(sqlConnectString);
-				MySqlCommand sqlCommand = new MySqlCommand(sqlSelect, sqlConnection);
-
-				MySqlDataAdapter sqlDa = new MySqlDataAdapter(sqlCommand);
-				sqlDa.Fill(sqlDt);
-
-				List<Account> accountRequests = new List<Account>();
-				for (int i = 0; i < sqlDt.Rows.Count; i++)
-				{
-					accountRequests.Add(new Account
-					{
-						id = Convert.ToInt32(sqlDt.Rows[i]["id"]),
-						firstName = sqlDt.Rows[i]["firstname"].ToString(),
-						lastName = sqlDt.Rows[i]["lastname"].ToString(),
-						email = sqlDt.Rows[i]["email"].ToString()
-					});
-				}
-				//convert the list of accounts to an array and return!
-				return accountRequests.ToArray();
-			}
-			else {
-				return new Account[0];
-			}
-		}
+		
 
 		//EXAMPLE OF A DELETE QUERY
 		[WebMethod(EnableSession = true)]

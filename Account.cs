@@ -5,17 +5,20 @@ using System.Web;
 
 namespace accountmanager
 {
-	public class Account
+	public class Review
 	{
 		//this is just a container for all info related
 		//to an account.  We'll simply create public class-level
 		//variables representing each piece of information!
 		public int id;
-		public string userId;
-		public string password;
-		public string firstName;
-		public string lastName;
-		public string email;
-        public string review;
-	}
+		public string review;
+		public string sentimentScore;
+		public string subjectivity;
+		public string actionableScore;
+		public string positiveCount;
+        public string negativeCount;
+        public string actionableCount;
+        public string wordCount;
+        public string qType;
+    }
 }

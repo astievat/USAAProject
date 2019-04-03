@@ -236,8 +236,8 @@ for row in records:
     #insert into reviews 2
     SQLCommand = ("INSERT INTO reviews2(review, sentimentScore, subjectivity, actionableScore, positiveCount, negativeCount, actionableCount, wordCount, qType) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)")
     Values = [reviewVar,sentimentScore, subjectivity, actionableScore,positiveCount,negativeCount,actionableCount,wordCount, qTypeVar]
-    #mycursor.execute(SQLCommand,Values)
-    #conn.commit()
+    mycursor.execute(SQLCommand,Values)
+    conn.commit()
     print (reviewVar)
     print (sentimentScore)
     print (subjectivity)
