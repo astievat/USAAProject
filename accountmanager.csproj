@@ -99,12 +99,14 @@
     <Content Include="dropdown.html" />
     <Content Include="Global.asax" />
     <Content Include="Home.html" />
+    <Content Include="index_Bootstrap.html" />
     <Content Include="js\addReview.js" />
     <Content Include="js\getReviews.js" />
     <Content Include="js\logOn.js" />
     <Content Include="js\mysql.js" />
     <Content Include="MainPage_v1.1.html" />
     <Content Include="pagestyling.css" />
+    <Content Include="report_Bootstrap.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

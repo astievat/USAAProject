@@ -3,6 +3,22 @@
 //that may want to edit accounts
 var reviewsArray;
 
+var review;
+var reviewWordCount; // total word count of the review
+
+var sentimentScore; // sentiment score from python
+var sentimentWordCount; // how many sentiment-related words are in the review
+var sentimentPercent; // percentage of sentiment words vs total words in the review
+
+var actionableScore; // actionable score from python
+var actionableWordCount // how many actionable-related words are in the review
+var actionablePercent; // percentage of actionable words vs total words in the review
+
+var rudeScore; // rude word score from python
+var negativeWordCount; // how many rude words are in the review
+var rudePercent; // percentage of rude words vs total words in the review
+
+var positiveWordCount;
 //this function grabs accounts and loads our account window
 function LoadReviews() {
 	var webMethod = "AccountServices.asmx/GetReviews";
@@ -23,15 +39,15 @@ function LoadReviews() {
 					if(types.includes(reviewsArray[obj].qType)){
 						document.getElementById(reviewsArray[obj].qType).innerHTML += `
 							<ul class="nested" id='${reviewsArray[obj].qType}'>
-                                <li onclick=#>Report ${reviewsArray[obj].id}</li> <div id = "${reviewsArray[obj].id}" class="square"></div>
+                                <li onclick="reviewClicked(${obj})";>Report ${reviewsArray[obj].id}</li> <div id = "${reviewsArray[obj].id}" class="square"></div>
                             </ul>`
 					}
 					else{
 						types.push(reviewsArray[obj].qType)
                         document.getElementById('myUL').innerHTML +=
-                            `<li><span class="caret">${reviewsArray[obj].qType}</span>
-                                <ul class="nested" id='${reviewsArray[obj].qType}'>
-                                    <li onclick=#>Report ${reviewsArray[obj].id}</li> <div id = "${reviewsArray[obj].id}" class="square"></div>
+                            `<li><span class="caret" onclick="questionClicked('${reviewsArray[obj].qType}')">${reviewsArray[obj].qType}</span>
+                                <ul class="nested" id="${reviewsArray[obj].qType}">
+                                    <li onclick="reviewClicked(${obj})">Report ${reviewsArray[obj].id}</li> <div id = "${reviewsArray[obj].id}" class="square"></div>
                                 </ul>
                             </li>`
 					}
@@ -52,3 +68,123 @@ function LoadReviews() {
 }
 
 
+
+
+function questionClicked(q) // Function for when the question is clicked. This function should take all the stats from all reviews under the question and combine them
+{
+
+var numberOfReviews = 0;
+var questionWordCount = 0; // total word count of all the reviews under the question
+
+var questionSentimentScore = 0; // sentiment score average of all the reviews
+
+var questionSentimentPercent = 0; // percentage of sentiment words vs total words
+
+var questionActionableScore = 0; // actionable score average of all the reviews
+var questionActionableWordCount = 0 // how many actionable-related words are in all the reviews
+var questionActionablePercent = 0; // percentage of actionable words vs total words
+
+var questionNegativeCount = 0;
+var questionPositiveCount = 0;
+
+
+    for (var obj in reviewsArray) {
+        if (reviewsArray[obj].qType == q) {
+            questionWordCount += Number(reviewsArray[obj].wordCount);
+            questionSentimentScore += Number(reviewsArray[obj].sentimentScore);
+            questionActionableScore += Number(reviewsArray[obj].actionableScore);
+            questionActionableWordCount += Number(reviewsArray[obj].actionableCount);
+            questionNegativeCount += Number(reviewsArray[obj].negativeCount);
+            questionPositiveCount += Number(reviewsArray[obj].positiveCount);
+            numberOfReviews += 1;
+        }
+        
+    }
+    questionCalculations();
+
+
+
+    document.getElementById("reviewParagraph").innerHTML = ""
+    document.getElementById("sentimentScoreLabel").innerHTML = "Sentiment Score: " + questionSentimentScore.toFixed(2)
+    document.getElementById("positiveWordCountLabel").innerHTML = "Positive Word Count: " + questionPositiveCount
+    document.getElementById("negativeWordCountLabel").innerHTML = "Negative Word Count: " + questionNegativeCount
+    document.getElementById("sentimentPercentageLabel").innerHTML = "Percentage: " + questionSentimentPercent.toFixed(2) + "%"
+    document.getElementById("actionableScoreLabel").innerHTML = "Actionable Score: " + questionActionableScore.toFixed(2)
+    document.getElementById("actionableWordCountLabel").innerHTML = "Actionable Word Count: " + questionActionableWordCount.toFixed(2)
+    document.getElementById("actionablePercentageLabel").innerHTML = "Percentage: " + questionActionablePercent.toFixed(2) + "%"
+
+
+    function questionCalculations()
+    {
+
+		// here, calculations for all the above variables should occur
+        questionActionableScore = questionActionableScore / numberOfReviews
+        questionSentimentScore = questionSentimentScore / numberOfReviews
+        questionSentimentPercent = (questionPositiveCount + questionNegativeCount) / questionWordCount;
+        questionActionablePercent = (questionActionableWordCount / questionWordCount) * 100;
+
+    }
+
+
+}
+
+function reviewClicked(id) // function for when a specific review is clicked
+{
+
+	// here, the variables are populated with information from the database that was passed on
+	reviewWordCount = reviewsArray[id].wordCount; 
+    sentimentScore = reviewsArray[id].sentimentScore;
+    actionableScore = reviewsArray[id].actionableScore;
+    actionableWordCount = reviewsArray[id].actionableCount;
+    negativeCount = reviewsArray[id].negativeCount;
+    positiveWordCount = reviewsArray[id].positiveCount;
+    review = reviewsArray[id].review;
+
+
+	// the 3 functions for the divs are called, where percentages are calculated and labels/text is set
+	sentimentCalculations(reviewsArray[id].sentimentScore);
+	actionableCalculations();
+    //rudeCalculations();
+
+    //alert(reviewWordCount)
+    //alert(sentimentScore)
+    //alert(actionableScore)
+    //alert(actionableWordCount)
+    //alert(negativeCount)
+    //alert(positiveWordCount)
+    //alert(sentimentPercent)
+    document.getElementById("reviewParagraph").innerHTML = review
+    document.getElementById("sentimentScoreLabel").innerHTML = "Sentiment Score: " + sentimentScore
+    document.getElementById("positiveWordCountLabel").innerHTML = "Positive Word Count: " + positiveWordCount
+    document.getElementById("negativeWordCountLabel").innerHTML = "Negative Word Count: " + negativeCount
+    document.getElementById("sentimentPercentageLabel").innerHTML = "Percentage: " + sentimentPercent.toFixed(2) + "%"
+    document.getElementById("actionableScoreLabel").innerHTML = "Actionable Score: " + actionableScore
+    document.getElementById("actionableWordCountLabel").innerHTML = "Actionable Word Count: " + actionableWordCount
+    document.getElementById("actionablePercentageLabel").innerHTML = "Percentage: " + actionablePercent.toFixed(2) + "%"
+
+}
+
+
+function sentimentCalculations(sentimentScore)
+{
+    sentimentScore = (sentimentScore * 100);
+    sentimentPercent = (positiveWordCount + negativeCount) / reviewWordCount;
+	// next code would be here, to set values of labels in the sentiment Div to fit the variables/calculations we have here.
+
+}
+
+function actionableCalculations()
+{
+	actionablePercent = (actionableWordCount / reviewWordCount) * 100;
+
+	// next code would be here, to set values of labels in the actionable Div to fit the variables/calculations we have here.
+
+}
+
+//function rudeCalculations()
+//{
+//	rudePercent = (rudeWordCount / reviewWordCount) * 100;
+
+//	// next code would be here, to set values of labels in the rude word Div to fit the variables/calculations we have here.
+
+//}
