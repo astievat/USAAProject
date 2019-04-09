@@ -10,6 +10,34 @@
 <script type="text/javascript">
     LoadReviews();
 </script>
+<!-- Pie chart --> 
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['word', 'Count'],
+          ['Actionable',     3],
+          ['Positive',      5],
+          ['Negative',  2],
+          ['Others', 2],
+        ]);
+
+        var options = {
+          title: 'Word Statistics'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    <!-- Pie chart END--> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Explaination of the project in generall. To be edited.....">
 
@@ -50,14 +78,8 @@
                     <h1 id="addBookTitle" align="center">Result</h1>
                 </div> <!-- End Header -->
 <textarea id="messageBox"rows="30" cols="60" ></textarea>
-<p><span class="resort">explaination of the review to be input</span> balahbalah</p>
-<ul>
-  <li> </li>
-  <li> </li>
-  <li> </li>
-  <li> </li>
-  <li> </li>
-</ul>
+<p><span class="resort">In Detail:</span> </p>
+<div id="piechart" style="width: 900px; height: 500px;"></div>
   <div id="contact">
   <span class="resort">Review Analysis Group</span>
   <br>
