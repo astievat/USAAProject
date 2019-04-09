@@ -1,7 +1,7 @@
 header, main, nav, footer, figure, figcaption { display: block; }
 video, embed { float: right; padding-left: 20px; }
 
-.logo { height: 180px; display: block;margin-right: auto; margin-left: auto;}
+.logo { height: 180px; display: block;}
 
 body { background-color: #4F6D93;
       color: #666666;
