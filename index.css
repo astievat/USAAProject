@@ -3,9 +3,9 @@ video, embed { float: right; padding-left: 20px; }
 
 .logo { height: 180px; display: block; float: left;}
 
-.login{float: right; margin-top: 50px; margin-right: 50px}
-#login{float: left;}
-
+.login{float: right; }
+#login{float: right;margin-top: 50px; margin-right: 50px}
+#banner{padding-top: 60px; padding-right: 300px}
 
 body { background-color: #4F6D93;
       color: #666666;
@@ -41,6 +41,7 @@ h1 { margin-bottom: 0;
     font-family: Georgia, "Times New Roman", serif;
 	letter-spacing: 5px;
 } 
+#banner h1{ font-size: 50px }
 nav { float: left;
      width: 160px;
      font-weight: bold; 
