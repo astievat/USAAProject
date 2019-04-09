@@ -1,6 +1,6 @@
 //HERE'S AN EXAMPLE OF AN AJAX CALL WITH JQUERY!
 function LogOn(userId, pass) {
-	alert("working")
+
 	//the url of the webservice we will be talking to
 	var webMethod = "AccountServices.asmx/LogOn";
 	//the parameters we will pass the service (in json format because curly braces)
@@ -33,11 +33,10 @@ function LogOn(userId, pass) {
 				//server replied true, so show the accounts panel
 				//showPanel('accountsPanel');
 				//LoadAccounts();
-                alert("Log in Successful");
+
 				loginSuccess = true;
-				trunToSignup ();
 				loggedIn = userId;
-				sendToAddBook(loggedIn);
+                window.location.href = "report_Bootstrap.html";
                 
 			}
 			else {

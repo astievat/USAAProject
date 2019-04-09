@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Review Analysis - Report</title>
+<meta charset="utf-8">
+<link href="index_Bootstrap.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/getReviews.js"></script>
+
+<script type="text/javascript">
+    LoadReviews();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Explaination of the project in generall. To be edited.....">
+
+<!--[if lt IE 9]>
+   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"> </script>   
+<![endif]-->
+</head>
+<body>
+<div id="wrapper">
+
+<header>
+  <img src="Sentiment_Analysis_Logo.jpg" alt="teamlogos" class="logo">
+</header>
+
+<nav>
+
+
+  <ul id="myUL">
+    <li><a href="index_Bootstrap.html">Home</a></li>
+
+  </ul>
+
+
+
+
+ 
+
+
+  
+</nav>
+<div id="logopic">
+</div>
+<main>
+    <h2>Analysis result below</h2>
+    <hr>
+    <div id="header">
+        <!-- Header for the page title -->
+
+        <h1 id="addBookTitle" align="center">Result</h1>
+    </div> <!-- End Header -->
+    
+    <div><p style="font-weight: bold" id="reviewParagraph"></p></div>
+
+    <br>
+    <br>
+    <div style="font-weight: bold; ">
+        <label id="sentimentScoreLabel">Sentiment Score: </label>
+        <label id="positiveWordCountLabel">Positive Word Count: </label>
+        <label id="negativeWordCountLabel">Negative Word Count: </label>
+        <label id="sentimentPercentageLabel">Percentage: </label>
+    </div>
+ 
+    <div style="font-weight: bold; clear: both; padding-top: 20px"; >
+        <label id="actionableScoreLabel">Actionable Score: </label>
+        <label id="actionableWordCountLabel">Actionable Word Count: </label>
+        <label id="actionablePercentageLabel">Percentage: </label>
+    </div>
+
+
+
+    <hr style="clear: both">
+
+
+    <div style="clear: both" id="contact">
+        <span class="resort">Review Analysis Group</span>
+        <br>
+        CIS 440 - Team ByteMe!
+        <br>
+        Arizona State University
+        <br>
+        Tempe, AZ 85281<br><br>
+        <a id="mobile" href="tel:888-555-5555">888-555-5555</a><span id="desktop">888-555-5555</span><br><br>
+    </div>
+</main>
+<footer>
+Copyright &copy; 2019 Byte Me<br>
+<a href="mailto:yourfirstname@yourlastname.com">yourfirstname@yourlastname.com</a>
+</footer>
+</div>
+</body>
+</html>
