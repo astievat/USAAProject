@@ -1,7 +1,10 @@
 header, main, nav, footer, figure, figcaption { display: block; }
 video, embed { float: right; padding-left: 20px; }
 
-.logo { height: 180px; display: block;}
+.logo { height: 180px; display: block; float: left;}
+
+.login{float: right; margin-top: 50px; margin-right: 50px}
+#login{float: left;}
 
 body { background-color: #4F6D93;
       color: #666666;
