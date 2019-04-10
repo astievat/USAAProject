@@ -139,7 +139,11 @@ var questionPositiveCount = 0;
     document.getElementById("actionableScoreLabel").innerHTML = "Actionable Score: " + questionActionableScore.toFixed(2)
     document.getElementById("actionableWordCountLabel").innerHTML = "Actionable Word Count: " + questionActionableWordCount.toFixed(2)
     document.getElementById("actionablePercentageLabel").innerHTML = "Percentage: " + questionActionablePercent.toFixed(2) + "%"
-   
+   	
+   	var arr = {'actionableCount':questionActionableWordCount,'positiveCount':questionPositiveCount,'negativeCount':questionNegativeCount,'wordCount':questionWordCount};
+   	
+
+   	drawChart(arr)
 
     function questionCalculations()
     {
