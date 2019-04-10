@@ -69,15 +69,31 @@ function thing(id){
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {
+      function drawChart(reviewsArr = null) {
+        
+
+        // var data = google.visualization.arrayToDataTable([
+        //   ['word', 'Count'],
+        //   ['Actionable',     reviewsArr.actionableCount],
+        //   ['Positive',      reviewsArr.positiveCount],
+        //   ['Negative',  reviewsArr.negativeCount],
+        //   ['Others', (reviewsArr.wordCount - reviewsArr.actionableCount - reviewsArr.positiveCount - reviewsArr.negativeCount)]
+        // ]);
+        var a = Number(reviewsArr.actionableCount);
+        var p = Number(reviewsArr.positiveCount);
+        var n = Number(reviewsArr.negativeCount);
+        var o = reviewsArr.wordCount - reviewsArr.actionableCount - reviewsArr.positiveCount - reviewsArr.negativeCount;
+
+
 
         var data = google.visualization.arrayToDataTable([
           ['word', 'Count'],
-          ['Actionable',     3],
-          ['Positive',      5],
-          ['Negative',  2],
-          ['Others', 2],
+          ['Actionable',     a],
+          ['Positive',      p],
+          ['Negative',  n],
+          ['Others', o]
         ]);
+
 
         var options = {
           title: 'Word Statistics'

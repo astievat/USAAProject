@@ -139,7 +139,7 @@ var questionPositiveCount = 0;
     document.getElementById("actionableScoreLabel").innerHTML = "Actionable Score: " + questionActionableScore.toFixed(2)
     document.getElementById("actionableWordCountLabel").innerHTML = "Actionable Word Count: " + questionActionableWordCount.toFixed(2)
     document.getElementById("actionablePercentageLabel").innerHTML = "Percentage: " + questionActionablePercent.toFixed(2) + "%"
-
+   
 
     function questionCalculations()
     {
@@ -188,7 +188,7 @@ function reviewClicked(id) // function for when a specific review is clicked
     document.getElementById("actionableScoreLabel").innerHTML = "Actionable Score: " + actionableScore
     document.getElementById("actionableWordCountLabel").innerHTML = "Actionable Word Count: " + actionableWordCount
     document.getElementById("actionablePercentageLabel").innerHTML = "Percentage: " + actionablePercent.toFixed(2) + "%"
-
+    drawChart(reviewsArray[id])
 }
 
 
