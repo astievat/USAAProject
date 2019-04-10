@@ -36,7 +36,7 @@ function LogOn(userId, pass) {
 
 				loginSuccess = true;
 				loggedIn = userId;
-                window.location.href = "report_Bootstrap.html";
+                window.location.href = "report.html";
                 
 			}
 			else {

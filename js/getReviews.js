@@ -35,17 +35,18 @@ function LoadReviews() {
 				//so we can use them in other functions as well
 				reviewsArray = msg.d;
 				//this clears out the div that will hold our account info
+
 				for(var obj in reviewsArray){
 					if(types.includes(reviewsArray[obj].qType)){
 						document.getElementById(reviewsArray[obj].qType).innerHTML += `
-							<ul class="nested" id='${reviewsArray[obj].qType}'>
+							
                                 <li onclick="reviewClicked(${obj})";>Report ${reviewsArray[obj].id}</li> <div id = "${reviewsArray[obj].id}" class="square"></div>
-                            </ul>`
+                            `
 					}
 					else{
 						types.push(reviewsArray[obj].qType)
                         document.getElementById('myUL').innerHTML +=
-                            `<li><span class="caret" onclick="questionClicked('${reviewsArray[obj].qType}')">${reviewsArray[obj].qType}</span>
+                            `<li><span class="caret" id="${reviewsArray[obj].qType}Id" onclick='questionClicked("${reviewsArray[obj].qType}");thing(this.id);';>${reviewsArray[obj].qType}</span>
                                 <ul class="nested" id="${reviewsArray[obj].qType}">
                                     <li onclick="reviewClicked(${obj})">Report ${reviewsArray[obj].id}</li> <div id = "${reviewsArray[obj].id}" class="square"></div>
                                 </ul>
