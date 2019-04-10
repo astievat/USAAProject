@@ -40,7 +40,7 @@ function LoadReviews() {
 					if(types.includes(reviewsArray[obj].qType)){
 						document.getElementById(reviewsArray[obj].qType).innerHTML += `
 							
-                                <li onclick="reviewClicked(${obj})";>Report ${reviewsArray[obj].id}</li> <div id = "${reviewsArray[obj].id}" class="square"></div>
+                                <li onclick="reviewClicked(${obj})";>Report ${reviewsArray[obj].id}      <div id = "${reviewsArray[obj].id}Sentiment" class="sentiment square"></div> <div id="${reviewsArray[obj].id}Action" class="action square"></div>      </li> 
                             `
 					}
 					else{
@@ -48,7 +48,7 @@ function LoadReviews() {
                         document.getElementById('myUL').innerHTML +=
                             `<li><span class="caret" id="${reviewsArray[obj].qType}Id" onclick='questionClicked("${reviewsArray[obj].qType}");thing(this.id);';>${reviewsArray[obj].qType}</span>
                                 <ul class="nested" id="${reviewsArray[obj].qType}">
-                                    <li onclick="reviewClicked(${obj})">Report ${reviewsArray[obj].id}</li> <div id = "${reviewsArray[obj].id}" class="square"></div>
+                                    <li onclick="reviewClicked(${obj})">Report ${reviewsArray[obj].id}     <div id = "${reviewsArray[obj].id}Sentiment" class="sentiment square"></div> <div id="${reviewsArray[obj].id}Action" class="action square"></div>      </li> 
                                 </ul>
                             </li>`
 					}
@@ -57,7 +57,33 @@ function LoadReviews() {
 
 				}
 
+				for (var obj in reviewsArray) {
+        			
+        			var boxWordCount = Number(reviewsArray[obj].wordCount);
+        			var boxSentimentScore = Number(reviewsArray[obj].sentimentScore);
+        			var boxActionableScore = Number(reviewsArray[obj].actionableScore);
+        			var boxActionableWordCount = Number(reviewsArray[obj].actionableCount);
+        			var boxNegativeCount = Number(reviewsArray[obj].negativeCount);
+        			var boxPositiveCount = Number(reviewsArray[obj].positiveCount);
+    				var boxActionablePercent = (boxActionableWordCount / boxWordCount) * 100;
 
+    				if(boxSentimentScore <= -.33){
+    					document.getElementById(reviewsArray[obj].id + "Sentiment").style["background-color"] = "red";
+    				} else if (boxSentimentScore < .33){
+    					document.getElementById(reviewsArray[obj].id + "Sentiment").style["background-color"] = "yellow";
+    				} else{
+    					document.getElementById(reviewsArray[obj].id + "Sentiment").style["background-color"] = "green";
+    				}
+
+    				if(boxActionablePercent < 5){
+    					document.getElementById(reviewsArray[obj].id + "Action").style["background-color"] = "red";
+    				} else if (boxSentimentScore <= 10){
+    					document.getElementById(reviewsArray[obj].id + "Action").style["background-color"] = "yellow";
+    				} else{
+    					document.getElementById(reviewsArray[obj].id + "Action").style["background-color"] = "green";
+    				}
+
+    			}
 
 
 				}
