@@ -77,12 +77,8 @@ function LoadReviews() {
 				// color boxes
 				for (var obj in reviewsArray) {
 
-        			console.log((obj))
-					if(favs.includes(reviewsArray[obj].id)){
-						document.getElementById('FavoritesId').innerHTML += `	
-             			<li id="fav${obj}" onclick="reviewClicked(${obj})";>Report ${reviewsArray[obj].id}</li> 
-         				`
-					}
+        			
+					
 
 
         			var boxWordCount = Number(reviewsArray[obj].wordCount);
@@ -108,6 +104,15 @@ function LoadReviews() {
     				} else{
     					document.getElementById(reviewsArray[obj].id + "Action").style["background-color"] = "green";
     				}
+
+
+
+    				if(favs.includes(reviewsArray[obj].id)){
+						document.getElementById('FavoritesId').innerHTML += `	
+             			<li id="fav${obj}" onclick="reviewClicked(${obj})";>Report ${reviewsArray[obj].id}    <div id = "${reviewsArray[obj].id}Sentiment" class="sentiment square" style="background-color: ${document.getElementById(reviewsArray[obj].id + 'Sentiment').style['background-color']}" ></div> <div id="${reviewsArray[obj].id}Action" class="action square" style="background-color:${document.getElementById(reviewsArray[obj].id + 'Action').style['background-color']}" ></div>    </li> 
+         				`
+					}
+
 
     			}
 
@@ -261,11 +266,11 @@ function actionableCalculations()
 
 function favorite(x)
 {
-	console.log(reviewsArray.indexOf(currentReview))
+	
 	if(x.checked){
 		favs.push(currentReview.id)
 		document.getElementById('FavoritesId').innerHTML += `	
-             <li id="fav${reviewsArray.indexOf(currentReview)}" onclick="reviewClicked(${reviewsArray.indexOf(currentReview)})";>Report ${currentReview.id}</li> 
+             <li id="fav${reviewsArray.indexOf(currentReview)}" onclick="reviewClicked(${reviewsArray.indexOf(currentReview)})";>Report ${currentReview.id}          <div id = "${currentReview.id}Sentiment" class="sentiment square" style="background-color: ${document.getElementById(currentReview.id + 'Sentiment').style['background-color']}" ></div> <div id="${currentReview.id}Action" class="action square" style="background-color:${document.getElementById(currentReview.id + 'Action').style['background-color']}" ></div>        </li> 
          `
 	}
 	else{
