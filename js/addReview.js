@@ -3,7 +3,7 @@ var userId;
 
 
 function CreateReview(review) {
-	alert(review)
+    document.getElementById('messageBox').value = "";
 	var webMethod = "AccountServices.asmx/AddReview";
 	var parameters = "{\"review\":\"" + encodeURI(review) + "\"}";
 	// alert("creatingbook")
