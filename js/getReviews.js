@@ -1,6 +1,17 @@
 //when we retrieve accounts, we'll put them here
 //so that we can reference them later for admins
 //that may want to edit accounts
+var currentReview = null;
+
+// get favorites from local storage
+if(JSON.parse(localStorage.getItem("favs")) == null){
+	var favs = [];
+}
+else{
+	var favs = JSON.parse(localStorage.getItem("favs"));
+}
+
+
 var reviewsArray;
 
 var review;
@@ -34,8 +45,12 @@ function LoadReviews() {
 				//server into our accountsArray variable
 				//so we can use them in other functions as well
 				reviewsArray = msg.d;
+
 				//this clears out the div that will hold our account info
 
+
+
+				// Add reports
 				for(var obj in reviewsArray){
 					if(types.includes(reviewsArray[obj].qType)){
 						document.getElementById(reviewsArray[obj].qType).innerHTML += `
@@ -57,8 +72,19 @@ function LoadReviews() {
 
 				}
 
+				
+
+				// color boxes
 				for (var obj in reviewsArray) {
-        			
+
+        			console.log((obj))
+					if(favs.includes(reviewsArray[obj].id)){
+						document.getElementById('FavoritesId').innerHTML += `	
+             			<li id="fav${obj}" onclick="reviewClicked(${obj})";>Report ${reviewsArray[obj].id}</li> 
+         				`
+					}
+
+
         			var boxWordCount = Number(reviewsArray[obj].wordCount);
         			var boxSentimentScore = Number(reviewsArray[obj].sentimentScore);
         			var boxActionableScore = Number(reviewsArray[obj].actionableScore);
@@ -144,6 +170,8 @@ var questionPositiveCount = 0;
    	
 
    	drawChart(arr)
+   	document.getElementById('favDiv').style.visibility='hidden';
+   	currentReview = null
 
     function questionCalculations()
     {
@@ -193,6 +221,16 @@ function reviewClicked(id) // function for when a specific review is clicked
     document.getElementById("actionableWordCountLabel").innerHTML = "Actionable Word Count: " + actionableWordCount
     document.getElementById("actionablePercentageLabel").innerHTML = "Percentage: " + actionablePercent.toFixed(2) + "%"
     drawChart(reviewsArray[id])
+
+    if(favs.includes(reviewsArray[id].id)){
+    	document.getElementById('favId').checked = true
+	}
+	else{
+		document.getElementById('favId').checked = false
+	}
+    document.getElementById('favDiv').style.visibility='visible';
+
+    currentReview = reviewsArray[id]
 }
 
 
@@ -219,3 +257,27 @@ function actionableCalculations()
 //	// next code would be here, to set values of labels in the rude word Div to fit the variables/calculations we have here.
 
 //}
+
+
+function favorite(x)
+{
+	console.log(reviewsArray.indexOf(currentReview))
+	if(x.checked){
+		favs.push(currentReview.id)
+		document.getElementById('FavoritesId').innerHTML += `	
+             <li id="fav${reviewsArray.indexOf(currentReview)}" onclick="reviewClicked(${reviewsArray.indexOf(currentReview)})";>Report ${currentReview.id}</li> 
+         `
+	}
+	else{
+		position = favs.indexOf(currentReview.id);
+
+		if(~position){
+			favs.splice(position,1);
+		}
+
+		document.getElementById(`fav${reviewsArray.indexOf(currentReview)}`).parentNode.removeChild(document.getElementById(`fav${reviewsArray.indexOf(currentReview)}`))
+		
+	}
+
+	localStorage.setItem("favs",JSON.stringify(favs));
+}
