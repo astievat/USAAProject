@@ -41,7 +41,8 @@ h1 { margin-bottom: 0;
     font-family: Georgia, "Times New Roman", serif;
 	letter-spacing: 5px;
 } 
-#banner h1{ font-size: 50px }
+#banner h1{ font-size: 40px; }
+#banner {width: 60%;}
 nav { float: left;
      width: 160px;
      font-weight: bold; 
