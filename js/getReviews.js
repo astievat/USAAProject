@@ -55,7 +55,7 @@ function LoadReviews() {
 					if(types.includes(reviewsArray[obj].qType)){
 						document.getElementById(reviewsArray[obj].qType).innerHTML += `
 							
-                                <li onclick="reviewClicked(${obj})";>Report ${reviewsArray[obj].id}      <div id = "${reviewsArray[obj].id}Sentiment" class="sentiment square"></div> <div id="${reviewsArray[obj].id}Action" class="action square"></div>      </li> 
+                                <li onclick="reviewClicked(${obj})";>    <div id = "${reviewsArray[obj].id}Sentiment" class="sentiment square" style="border-radius:3px"></div> <div id="${reviewsArray[obj].id}Action" class="action square" style="border-radius:3px"></div> Report ${reviewsArray[obj].id}            </li> 
                             `
 					}
 					else{
@@ -63,7 +63,7 @@ function LoadReviews() {
                         document.getElementById('myUL').innerHTML +=
                             `<li><span class="caret" id="${reviewsArray[obj].qType}Id" onclick='questionClicked("${reviewsArray[obj].qType}");thing(this.id);';>${reviewsArray[obj].qType}</span>
                                 <ul class="nested" id="${reviewsArray[obj].qType}">
-                                    <li onclick="reviewClicked(${obj})">Report ${reviewsArray[obj].id}     <div id = "${reviewsArray[obj].id}Sentiment" class="sentiment square"></div> <div id="${reviewsArray[obj].id}Action" class="action square"></div>      </li> 
+                                    <li onclick="reviewClicked(${obj})">  <div id = "${reviewsArray[obj].id}Sentiment" class="sentiment square" style="border-radius:3px"></div> <div id="${reviewsArray[obj].id}Action" class="action square" style="border-radius:3px"></div>    Report ${reviewsArray[obj].id}           </li> 
                                 </ul>
                             </li>`
 					}
@@ -109,7 +109,7 @@ function LoadReviews() {
 
     				if(favs.includes(reviewsArray[obj].id)){
 						document.getElementById('FavoritesId').innerHTML += `	
-             			<li id="fav${obj}" onclick="reviewClicked(${obj})";>Report ${reviewsArray[obj].id}    <div id = "${reviewsArray[obj].id}Sentiment" class="sentiment square" style="background-color: ${document.getElementById(reviewsArray[obj].id + 'Sentiment').style['background-color']}" ></div> <div id="${reviewsArray[obj].id}Action" class="action square" style="background-color:${document.getElementById(reviewsArray[obj].id + 'Action').style['background-color']}" ></div>    </li> 
+             			<li id="fav${obj}" onclick="reviewClicked(${obj})";> <div id = "${reviewsArray[obj].id}Sentiment" class="sentiment square" style="background-color: ${document.getElementById(reviewsArray[obj].id + 'Sentiment').style['background-color']}; border-radius:3px;" ></div> <div id="${reviewsArray[obj].id}Action" class="action square" style="background-color:${document.getElementById(reviewsArray[obj].id + 'Action').style['background-color']}; border-radius:3px;" ></div>  Report ${reviewsArray[obj].id}        </li> 
          				`
 					}
 
@@ -270,7 +270,7 @@ function favorite(x)
 	if(x.checked){
 		favs.push(currentReview.id)
 		document.getElementById('FavoritesId').innerHTML += `	
-             <li id="fav${reviewsArray.indexOf(currentReview)}" onclick="reviewClicked(${reviewsArray.indexOf(currentReview)})";>Report ${currentReview.id}          <div id = "${currentReview.id}Sentiment" class="sentiment square" style="background-color: ${document.getElementById(currentReview.id + 'Sentiment').style['background-color']}" ></div> <div id="${currentReview.id}Action" class="action square" style="background-color:${document.getElementById(currentReview.id + 'Action').style['background-color']}" ></div>        </li> 
+             <li id="fav${reviewsArray.indexOf(currentReview)}" onclick="reviewClicked(${reviewsArray.indexOf(currentReview)})";>  <div id = "${currentReview.id}Sentiment" class="sentiment square" style="background-color: ${document.getElementById(currentReview.id + 'Sentiment').style['background-color']}; border-radius:3px;" ></div> <div id="${currentReview.id}Action" class="action square" style="background-color:${document.getElementById(currentReview.id + 'Action').style['background-color']}; border-radius:3px;" ></div>  Report ${currentReview.id}                  </li> 
          `
 	}
 	else{
