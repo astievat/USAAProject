@@ -99,7 +99,7 @@ function LoadReviews() {
 
     				if(boxActionablePercent < 5){
     					document.getElementById(reviewsArray[obj].id + "Action").style["background-color"] = "red";
-    				} else if (boxSentimentScore <= 10){
+    				} else if (boxActionablePercent <= 10){
     					document.getElementById(reviewsArray[obj].id + "Action").style["background-color"] = "yellow";
     				} else{
     					document.getElementById(reviewsArray[obj].id + "Action").style["background-color"] = "green";
@@ -241,8 +241,8 @@ function reviewClicked(id) // function for when a specific review is clicked
 
 function sentimentCalculations(sentimentScore)
 {
-    sentimentScore = (sentimentScore * 100);
-    sentimentPercent = (positiveWordCount + negativeCount) / reviewWordCount;
+    sentimentScore = (sentimentScore * 10);
+    sentimentPercent = ((positiveWordCount + negativeCount) / reviewWordCount)*10;
 	// next code would be here, to set values of labels in the sentiment Div to fit the variables/calculations we have here.
 
 }
