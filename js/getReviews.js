@@ -175,7 +175,10 @@ var questionPositiveCount = 0;
    	
 
    	drawChart(arr)
-   	document.getElementById('favDiv').style.visibility='hidden';
+    document.getElementById('favDiv').style.visibility = 'hidden';
+    console.log(obj)
+    console.log(document.getElementById('addBoodTitle'))
+    document.getElementById('addBookTitle').innerHTML = q + " Report"
    	currentReview = null
 
     function questionCalculations()
@@ -236,6 +239,7 @@ function reviewClicked(id) // function for when a specific review is clicked
     document.getElementById('favDiv').style.visibility='visible';
 
     currentReview = reviewsArray[id]
+    document.getElementById('addBookTitle').innerHTML = "Report " + reviewsArray[id].id
 }
 
 
