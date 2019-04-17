@@ -90,14 +90,15 @@ function thing(id){
         var data = google.visualization.arrayToDataTable([
           ['word', 'Count'],
           ['Actionable',     a],
-          ['Positive',      p],
           ['Negative',  n],
+          ['Positive',      p],
           ['Others', o]
         ]);
 
 
         var options = {
-          title: 'Word Statistics'
+          title: 'Word Statistics',
+          colors: ['#cc7b4c', '#a10000', '#416600', '#5492e7']
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -124,11 +125,30 @@ function thing(id){
 
 <nav>
 
+<div id='sortButtons'>
+<h3>Sort</h3>
+<label class="container">None
+  <input type="radio" checked="checked" name="radio" onclick = "LoadReviews();">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Sentiment
+  <input type="radio" name="radio" onclick = "LoadReviews('sDesc');">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Actionable
+  <input type="radio" name="radio" onclick = "LoadReviews('aDesc');">
+  <span class="checkmark"></span>
+</label>
+
+<div>
+
+
 
   <ul id="myUL">
 
     <li><span class="caret" id="FavParentId" onclick="thing(this.id)">Favorites</span>
       <ul class="nested" id="FavoritesId">
+        <li> <div class="sentiment square" style="border-radius:3px; background-color:transparent;font-size:14pt ">S</div> <div class="action square" style="border-radius:3px; background-color:transparent;font-size:14pt ">A</div></li>
       </ul>
     </li>
 
@@ -145,7 +165,7 @@ function thing(id){
 <div id="logopic">
 </div>
 <main>
-    <h2>Analysis result below</h2>
+  <h2 style="width:50%">Analysis result below</h2>
     <hr>
     <div id="header">
         <!-- Header for the page title -->

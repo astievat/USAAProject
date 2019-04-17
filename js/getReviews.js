@@ -31,7 +31,7 @@ var rudePercent; // percentage of rude words vs total words in the review
 
 var positiveWordCount;
 //this function grabs accounts and loads our account window
-function LoadReviews() {
+function LoadReviews(sort = null) {
 	var webMethod = "AccountServices.asmx/GetReviews";
 	var types = [];
 	$.ajax({
@@ -46,6 +46,31 @@ function LoadReviews() {
 				//so we can use them in other functions as well
 				reviewsArray = msg.d;
 
+				for(var obj in reviewsArray){
+					reviewsArray[obj].sentimentScore = +reviewsArray[obj].sentimentScore
+					reviewsArray[obj].actionableScore = +reviewsArray[obj].actionableScore
+				}
+
+				document.getElementById('myUL').innerHTML = `
+					<li><span class="caret caret-down" id="FavParentId" onclick="thing(this.id)">Favorites</span>
+      					<ul class="nested active" id="FavoritesId">
+        					<li> <div class="sentiment square" style="border-radius:3px; background-color:transparent;font-size:14pt ">S</div> <div class="action square" style="border-radius:3px; background-color:transparent;font-size:14pt ">A</div></li>
+      					</ul>
+    				</li>`
+
+				if(sort=="sDesc"){
+					reviewsArray.sort((b, a) => parseFloat(a.sentimentScore) - parseFloat(b.sentimentScore));
+
+				}
+				if(sort=="sAsc"){
+					reviewsArray.sort((a, b) => parseFloat(a.sentimentScore) - parseFloat(b.sentimentScore));
+				}
+				if(sort=="aDesc"){
+					reviewsArray.sort((b, a) => parseFloat(a.actionableScore) - parseFloat(b.actionableScore));
+				}
+				if(sort=="aAsc"){
+					reviewsArray.sort((a, b) => parseFloat(a.actionableScore) - parseFloat(b.actionableScore));
+				}
 				//this clears out the div that will hold our account info
 
 
@@ -63,6 +88,7 @@ function LoadReviews() {
                         document.getElementById('myUL').innerHTML +=
                             `<li><span class="caret" id="${reviewsArray[obj].qType}Id" onclick='questionClicked("${reviewsArray[obj].qType}");thing(this.id);';>${reviewsArray[obj].qType}</span>
                                 <ul class="nested" id="${reviewsArray[obj].qType}">
+                                	<li> <div class="sentiment square" style="border-radius:3px; background-color:transparent; font-size:14pt">S</div> <div class="action square" style="border-radius:3px; background-color:transparent;font-size:14pt ">A</div></li> 
                                     <li onclick="reviewClicked(${obj})">  <div id = "${reviewsArray[obj].id}Sentiment" class="sentiment square" style="border-radius:3px"></div> <div id="${reviewsArray[obj].id}Action" class="action square" style="border-radius:3px"></div>    Report ${reviewsArray[obj].id}           </li> 
                                 </ul>
                             </li>`
