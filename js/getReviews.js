@@ -192,10 +192,10 @@ var questionPositiveCount = 0;
     document.getElementById("sentimentScoreLabel").innerHTML = "Sentiment Score: " + questionSentimentScore.toFixed(2)
     document.getElementById("positiveWordCountLabel").innerHTML = "Positive Word Count: " + questionPositiveCount
     document.getElementById("negativeWordCountLabel").innerHTML = "Negative Word Count: " + questionNegativeCount
-    document.getElementById("sentimentPercentageLabel").innerHTML = "Percentage: " + questionSentimentPercent.toFixed(2) + "%"
+    // document.getElementById("sentimentPercentageLabel").innerHTML = "Percentage: " + questionSentimentPercent.toFixed(2) + "%"
     document.getElementById("actionableScoreLabel").innerHTML = "Actionable Score: " + questionActionableScore.toFixed(2)
     document.getElementById("actionableWordCountLabel").innerHTML = "Actionable Word Count: " + questionActionableWordCount.toFixed(2)
-    document.getElementById("actionablePercentageLabel").innerHTML = "Percentage: " + questionActionablePercent.toFixed(2) + "%"
+    // document.getElementById("actionablePercentageLabel").innerHTML = "Percentage: " + questionActionablePercent.toFixed(2) + "%"
    	
    	var arr = {'actionableCount':questionActionableWordCount,'positiveCount':questionPositiveCount,'negativeCount':questionNegativeCount,'wordCount':questionWordCount};
    	
@@ -250,10 +250,10 @@ function reviewClicked(id) // function for when a specific review is clicked
     document.getElementById("sentimentScoreLabel").innerHTML = "Sentiment Score: " + sentimentScore
     document.getElementById("positiveWordCountLabel").innerHTML = "Positive Word Count: " + positiveWordCount
     document.getElementById("negativeWordCountLabel").innerHTML = "Negative Word Count: " + negativeCount
-    document.getElementById("sentimentPercentageLabel").innerHTML = "Percentage: " + sentimentPercent.toFixed(2) + "%"
+    // document.getElementById("sentimentPercentageLabel").innerHTML = "Percentage: " + sentimentPercent.toFixed(2) + "%"
     document.getElementById("actionableScoreLabel").innerHTML = "Actionable Score: " + actionableScore
     document.getElementById("actionableWordCountLabel").innerHTML = "Actionable Word Count: " + actionableWordCount
-    document.getElementById("actionablePercentageLabel").innerHTML = "Percentage: " + actionablePercent.toFixed(2) + "%"
+    // document.getElementById("actionablePercentageLabel").innerHTML = "Percentage: " + actionablePercent.toFixed(2) + "%"
     drawChart(reviewsArray[id])
 
     if(favs.includes(reviewsArray[id].id)){
