@@ -44,6 +44,12 @@
             background-color: #555;
             display: inline-block;
         }
+
+        
+
+
+
+
     </style>
     <script>
         // var toggler = document.getElementsByClassName("caret");
@@ -124,9 +130,9 @@
 
             <nav>
 
-                <div id='sortButtons'>
+                <div id='sortButtons' >
                     <h3>Sort</h3>
-                    <label class="container">
+                    <!-- <label class="container">
                         None
                         <input type="radio" checked="checked" name="radio" onclick="LoadReviews();">
                         <span class="checkmark"></span>
@@ -140,7 +146,14 @@
                         Actionable
                         <input type="radio" name="radio" onclick="LoadReviews('aDesc');">
                         <span class="checkmark"></span>
-                    </label>
+                    </label> -->
+                    
+                    <select style="width:120px; height: 30px; font-size:14pt; border-radius: 8px; background: transparent; border-width: 2px; border-color: #000033" onchange="if (this.selectedIndex) LoadReviews(value);">
+                        <option selected value="null">None</option>
+                        <option value="sDesc">Sentiment</option>
+                        <option value="aDesc">Actionable</option>
+                    </select>
+                    
 
                     <div>
 
