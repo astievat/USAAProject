@@ -7,9 +7,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/getReviews.js"></script>
 <!-- <script type="text/javascript" src="js/analytics_js.js"></script> -->
-<script type="text/javascript">
-    LoadReviews();
-</script>
+
 <style type="text/css">
   .caret {
   cursor: pointer;
@@ -146,8 +144,8 @@ function thing(id){
 
   <ul id="myUL">
 
-    <li><span class="caret" id="FavParentId" onclick="thing(this.id)">Favorites</span>
-      <ul class="nested" id="FavoritesId">
+    <li><span class="caret caret-down" id="FavParentId" onclick="thing(this.id)">Favorites</span>
+      <ul class="nested active" id="FavoritesId">
         <li> <div class="sentiment square" style="border-radius:3px; background-color:transparent;font-size:14pt ">S</div> <div class="action square" style="border-radius:3px; background-color:transparent;font-size:14pt ">A</div></li>
       </ul>
     </li>
@@ -222,4 +220,7 @@ Copyright &copy; 2019 Byte Me<br>
 </footer>
 </div>
 </body>
+<script type="text/javascript">
+    LoadReviews();
+</script>
 </html>

@@ -168,7 +168,7 @@ def action_score(review):
     
 #connection string and cursor
 
-conn=mysql.connector.connect(host='byte.cis440.com',user='salem',passwd='CIS440!',db='byte_database') 
+conn=mysql.connector.connect(host='107.180.1.16',user='teambyteme',passwd='!!Cis440',db='teambyteme') 
 mycursor=conn.cursor()
 
 
@@ -176,7 +176,7 @@ mycursor=conn.cursor()
 
 #pull from reviews1
 stoplist = stopwords.words('english')
-SQLCommand=("Select * from reviews1")
+SQLCommand=("Select * from reviews")
 mycursor = conn.cursor()
 mycursor.execute(SQLCommand)
 records = mycursor.fetchall()
